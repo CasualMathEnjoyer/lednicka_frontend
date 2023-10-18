@@ -6,6 +6,6 @@ main.py file contains the code to be executed
 
 Important! using specific versions:
 - ubuntu-20.04
-- Use Node.js 16
-- python3 3.7.6
+- Node.js 16
+- python3 3.7.6 - 3 uses in spec file
 - kivy_version 1.9.1
