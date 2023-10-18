@@ -8,14 +8,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
       - uses: actions/checkout@v2
+
+      - name: Remove .extraheader from git config
+        run: git config --global --unset http.https://github.com/.extraheader
+
 
       # used to cache dependencies with a timeout
       - name: Get Date
         id: get-date
-        run: |
-          echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
-        shell: bash
+        run: echo "date=$(date -u "+%Y%m%d")" >> $GITHUB_ENV
 
       - name: Cache Buildozer global directory
         uses: actions/cache@v2
