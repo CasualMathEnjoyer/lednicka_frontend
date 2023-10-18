@@ -19,6 +19,7 @@ jobs:
         run: |
           if git config --global --get http.https://github.com/.extraheader; then
             git config --global --unset http.https://github.com/.extraheader
+          fi
           
       - name: Accept Android SDK licenses
         run: yes | sdkmanager --licenses
