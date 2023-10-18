@@ -15,21 +15,21 @@ jobs:
 
       - uses: actions/checkout@v2
 
-      - name: Remove .extraheader from git config
-        run: |
-          if git config --global --get http.https://github.com/.extraheader; then
-            git config --global --unset http.https://github.com/.extraheader
-          fi
-          
-      - name: Install Android SDK
-        run: |
-          wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip -O android-sdk.zip
-          unzip -q android-sdk.zip -d $HOME/android-sdk
-          export ANDROID_HOME=$HOME/android-sdk
-          export PATH=$PATH:$ANDROID_HOME/tools/bin
-
-      - name: Accept Android SDK licenses
-        run: yes | sdkmanager --licenses
+#      - name: Remove .extraheader from git config
+#        run: |
+#          if git config --global --get http.https://github.com/.extraheader; then
+#            git config --global --unset http.https://github.com/.extraheader
+#          fi
+#
+#      - name: Install Android SDK
+#        run: |
+#          wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip -O android-sdk.zip
+#          unzip -q android-sdk.zip -d $HOME/android-sdk
+#          export ANDROID_HOME=$HOME/android-sdk
+#          export PATH=$PATH:$ANDROID_HOME/tools/bin
+#
+#      - name: Accept Android SDK licenses
+#        run: yes | sdkmanager --licenses
 
       # used to cache dependencies with a timeout
       - name: Get Date
