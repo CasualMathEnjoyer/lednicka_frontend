@@ -1,5 +1,6 @@
 # lednicka frontend
 python to apk
+I do not recommend this.
 
 main.py file contains the code to be executed
 .kv file to be added for more specifications later
